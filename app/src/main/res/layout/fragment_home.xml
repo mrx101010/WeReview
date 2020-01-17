@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#c312"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/putih">
 
-    >
+    <RelativeLayout
+        android:id="@+id/relative_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_51sdp"
+        android:background="@color/bg_orange">
 
-    <TextView
+        <EditText
+            android:id="@+id/etSearchGenre"
+            android:layout_width="@dimen/_290sdp"
+            android:layout_height="@dimen/_31sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@drawable/bg_home_search"
+            android:hint="Telusuri WeReview..."
+            android:paddingStart="@dimen/_15sdp"/>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGenre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Home"
-        android:textColor="#fff"
-        android:textSize="75dp" />
+        android:layout_below="@+id/relative_toolbar"
+        android:layout_marginTop="@dimen/_15sdp"/>
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/putih"
+        android:layout_alignParentBottom="true"
+        app:itemIconTint="@color/bg_orange"
+        app:itemTextColor="@color/bg_orange"
+        app:menu="@menu/bottom_navigation"/>
 </RelativeLayout>
