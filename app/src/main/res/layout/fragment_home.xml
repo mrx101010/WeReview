@@ -14,7 +14,7 @@
 
         <EditText
             android:id="@+id/etSearchGenre"
-            android:layout_width="@dimen/_290sdp"
+            android:layout_width="@dimen/_250sdp"
             android:layout_height="@dimen/_31sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
@@ -31,13 +31,4 @@
         android:layout_below="@+id/relative_toolbar"
         android:layout_marginTop="@dimen/_15sdp"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/putih"
-        android:layout_alignParentBottom="true"
-        app:itemIconTint="@color/bg_orange"
-        app:itemTextColor="@color/bg_orange"
-        app:menu="@menu/bottom_navigation"/>
 </RelativeLayout>

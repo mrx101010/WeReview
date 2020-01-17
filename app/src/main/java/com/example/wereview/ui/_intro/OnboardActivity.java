@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import com.example.wereview.MainActivity;
 import com.example.wereview.R;
+import com.example.wereview.ui._fragment.HomeFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class OnboardActivity extends AppCompatActivity {
 
         // session
         if (isSharedPreference()) {
-            Intent intent = new Intent(OnboardActivity.this, MainActivity.class);
+            Intent intent = new Intent(OnboardActivity.this, HomeFragment.class);
             startActivity(intent);
             finish();
         }
