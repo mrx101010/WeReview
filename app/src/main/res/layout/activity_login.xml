@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -17,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="@dimen/_170sdp"
         android:layout_marginTop="-100dp"
-        android:background="@drawable/gambar_biji"
+        android:background="@drawable/polygon"
         android:rotation="7" />
 
     <View
@@ -28,11 +27,11 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="-240dp"
         android:layout_marginTop="@dimen/_306sdp"
-        android:background="@drawable/gambar_biji"
+        android:background="@drawable/polygon"
         android:rotation="90" />
 
-    <View
-        android:id="@+id/logo"
+    <ImageView
+        android:id="@+id/ivLogo"
         android:layout_width="@dimen/_94sdp"
         android:layout_height="@dimen/_84sdp"
         android:layout_alignParentLeft="true"
@@ -41,113 +40,98 @@
         android:layout_marginTop="@dimen/_77sdp"
         android:background="@drawable/logo" />
 
-    <RelativeLayout
-        android:id="@+id/sektor_username"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/_17sdp"
-        android:layout_marginTop="@dimen/_61sdp">
+    <EditText
+        android:id="@+id/etFormUsername"
+        android:layout_width="@dimen/_255sdp"
+        android:layout_height="@dimen/_37sdp"
+        android:background="@drawable/form"
+        android:hint="Username"
+        android:textAlignment="center"
+        android:padding="8dp"
+        android:drawableLeft="@drawable/ic_person"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_70sdp"
+        android:layout_below="@+id/ivLogo" />
+
+    <EditText
+        android:id="@+id/etFormPassword"
+        android:layout_width="@dimen/_255sdp"
+        android:layout_height="@dimen/_37sdp"
+        android:background="@drawable/form"
+        android:hint="Password"
+        android:textAlignment="center"
+        android:padding="8dp"
+        android:drawableLeft="@drawable/ic_lock"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_below="@+id/etFormUsername" />
 
 
-        <View
-            android:id="@+id/gambar_username"
-            android:layout_width="@dimen/_21sdp"
-            android:layout_height="@dimen/_21sdp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_195sdp"
-            android:background="@drawable/icon_profile"
-            android:elevation="1dp" />
+        <Button
+            android:id="@+id/btMasuk"
+            android:layout_width="@dimen/_85sdp"
+            android:layout_height="@dimen/_34sdp"
+            android:text="Masuk"
+            android:textColor="@color/putih"
+            android:background="@drawable/button"
+            android:layout_below="@+id/etFormPassword"
+            android:layout_marginLeft="@dimen/_190sdp"
+            android:layout_marginTop="@dimen/_30sdp"/>
 
-        <EditText
-            android:hint="Username"
-            android:textAlignment="center"
-            android:id="@+id/form_username"
-            android:layout_width="@dimen/_255sdp"
-            android:layout_height="@dimen/_37sdp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_187sdp"
-            android:background="@drawable/form" />
-    </RelativeLayout>
+    <TextView
+        android:id="@+id/textToRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textToLogin"
+        android:textSize="@dimen/_14ssp"
+        android:layout_below="@+id/btMasuk"
+        android:layout_marginTop="@dimen/_100sdp"
+        android:paddingStart="@dimen/_65sdp" />
 
-    <RelativeLayout
-        android:id="@+id/sektor_password"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/_17sdp"
-        android:layout_marginTop="@dimen/_30sdp">
-
-        <View
-            android:id="@+id/gambar_password"
-            android:layout_width="@dimen/_21sdp"
-            android:layout_height="@dimen/_21sdp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_300sdp"
-            android:background="@drawable/password"
-            android:elevation="1dp"/>
-
-        <EditText
-            android:textAlignment="center"
-            android:id="@+id/form_password"
-            android:layout_width="@dimen/_255sdp"
-            android:layout_height="@dimen/_37sdp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_marginTop="@dimen/_291sdp"
-            android:background="@drawable/form"
-            android:hint="Password" />
-    </RelativeLayout>
-
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="@dimen/_85sdp"
-        android:layout_height="@dimen/_34sdp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="@dimen/_212sdp"
-        android:layout_marginTop="@dimen/_410sdp"
-        android:background="@drawable/button"
-        android:text="Masuk"
-        android:textColor="#ffffff" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/_42sdp"
-        android:layout_marginTop="@dimen/_150sdp">
-
-        <TextView
-            android:id="@+id/belum_punya"
-            android:layout_width="@dimen/_96sdp"
-            android:layout_height="@dimen/_17sdp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="@dimen/_54sdp"
-            android:layout_marginTop="@dimen/_353sdp"
-            android:gravity="top"
-            android:text="@string/belum_punya"
-            android:textAppearance="@style/belum_punya" />
-
-        <TextView
-            android:id="@+id/daftar"
-            android:layout_width="@dimen/_42sdp"
-            android:layout_height="@dimen/_17sdp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="@dimen/_150sdp"
-            android:layout_marginTop="@dimen/_353sdp"
-            android:gravity="top"
-            android:text="@string/daftar"
-            android:textAppearance="@style/daftar" />
+    <TextView
+        android:id="@+id/textToRegister2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/textToRegister"
+        android:text="@string/textToLogin2"
+        android:textSize="@dimen/_14ssp"
+        android:layout_below="@+id/btMasuk"
+        android:layout_marginTop="@dimen/_100sdp"
+        android:paddingStart="@dimen/_5sdp"
+        android:textColor="@color/biru"/>
 
 
-    </RelativeLayout>
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginLeft="@dimen/_42sdp"-->
+<!--        android:layout_marginTop="@dimen/_150sdp">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/belum_punya"-->
+<!--            android:layout_width="@dimen/_96sdp"-->
+<!--            android:layout_height="@dimen/_17sdp"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginLeft="@dimen/_54sdp"-->
+<!--            android:layout_marginTop="@dimen/_353sdp"-->
+<!--            android:gravity="top"-->
+<!--            android:text="@string/belum_punya" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/daftar"-->
+<!--            android:layout_width="@dimen/_42sdp"-->
+<!--            android:layout_height="@dimen/_17sdp"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginLeft="@dimen/_150sdp"-->
+<!--            android:layout_marginTop="@dimen/_353sdp"-->
+<!--            android:gravity="top"-->
+<!--            android:text="@string/daftar"-->
+<!--             />-->
+
+
+<!--    </RelativeLayout>-->
 
 
 </RelativeLayout>

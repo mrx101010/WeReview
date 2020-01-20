@@ -95,13 +95,12 @@
         android:id="@+id/btDaftar"
         android:layout_width="@dimen/_85sdp"
         android:layout_height="@dimen/_34sdp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="@dimen/_190sdp"
-        android:layout_marginTop="@dimen/_430sdp"
         android:background="@drawable/button"
         android:text="Daftar"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:layout_below="@id/etFormPassword"
+        android:layout_marginLeft="@dimen/_190sdp"
+        android:layout_marginTop="@dimen/_30sdp"/>
 
     <TextView
         android:id="@+id/textToLogin"
@@ -111,8 +110,7 @@
         android:textSize="@dimen/_14ssp"
         android:layout_below="@+id/btDaftar"
         android:layout_marginTop="@dimen/_25sdp"
-        android:paddingStart="@dimen/_65sdp"
-         />
+        android:paddingStart="@dimen/_65sdp" />
 
     <TextView
         android:id="@+id/textToLogin2"
@@ -124,17 +122,5 @@
         android:layout_below="@+id/btDaftar"
         android:layout_marginTop="@dimen/_25sdp"
         android:paddingStart="@dimen/_5sdp"
-        android:textColor="@color/biru"/>
-
-
-
-
+        android:textColor="@color/biru" />
 </RelativeLayout>
-
-<!--    <RelativeLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginLeft="@dimen/_42sdp"-->
-<!--        android:layout_marginTop="@dimen/_150sdp">-->
-
-<!--    </RelativeLayout>-->
