@@ -2,6 +2,9 @@
     <string name="app_name">WeReview</string>
     <string name="textToLogin">Sudah punya akun?</string>
     <string name="textToLogin2">Masuk</string>
+    <string name="belum_punya">Belum punya akun?</string>
+    <string name="masuk">Masuk</string>
+    <string name="daftar">Daftar</string>
     <string name="button_lewati">Lewati</string>
     <string name="button_lanjut">Lanjut</string>
     <string name="button_masuk">Masuk</string>
@@ -11,5 +14,4 @@
     <string name="tvBodyOnboard2">Dapatkan info yang kamu butuhkan dari aplikasi ini</string>
     <string name="tvTitleOnboard3">Tampilan Friendly!</string>
     <string name="tvBodyOnboard3">Tampilan diaplikasi ini memudahkan kamu untuk memahami aplikasi ini!</string>
-
 </resources>
