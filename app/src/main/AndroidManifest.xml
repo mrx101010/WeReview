@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui._register.register"></activity>
+        <activity android:name=".ui._register.register"
+            android:theme="@style/AppTheme.Fullscreen"></activity>
         <activity android:name=".ui._intro.OnboardActivity" android:theme="@style/AppTheme.Fullscreen"></activity>
 
         <activity android:name=".MainActivity" android:theme="@style/AppTheme.NoActionBar">

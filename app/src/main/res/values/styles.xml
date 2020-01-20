@@ -8,23 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="sudah_punya">
-        <item name="android:textSize">
-            14sp
-        </item>
-        <item name="android:textColor">
-            #C21D1111
-        </item>
-    </style>
-    <style name="masuk">
-        <item name="android:textSize">
-            14sp
-        </item>
-        <item name="android:textColor">
-            #130E0E
-        </item>
-    </style>
-
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

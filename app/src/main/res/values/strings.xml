@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">WeReview</string>
-    <string name="sudah_punya">Sudah punya akun?</string>
-    <string name="masuk">Masuk</string>
+    <string name="textToLogin">Sudah punya akun?</string>
+    <string name="textToLogin2">Masuk</string>
     <string name="button_lewati">Lewati</string>
     <string name="button_lanjut">Lanjut</string>
     <string name="button_masuk">Masuk</string>

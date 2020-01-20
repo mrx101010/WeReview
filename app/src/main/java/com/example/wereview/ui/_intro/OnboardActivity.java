@@ -12,13 +12,13 @@ import android.widget.Button;
 import com.example.wereview.MainActivity;
 import com.example.wereview.R;
 import com.example.wereview.ui._fragment.HomeFragment;
+import com.example.wereview.ui._register.register;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OnboardActivity extends AppCompatActivity {
-
 
     private ViewPager viewPager;
     private OnboardAdapter adapter;
@@ -33,9 +33,9 @@ public class OnboardActivity extends AppCompatActivity {
 
         // session
         if (isSharedPreference()) {
-            Intent intent = new Intent(OnboardActivity.this, HomeFragment.class);
-            startActivity(intent);
-            finish();
+//            Intent intent = new Intent(OnboardActivity.this, TargetcLass.class);
+//            startActivity(intent);
+//            finish();
         }
 
         setContentView(R.layout.activity_onboard);
@@ -47,9 +47,9 @@ public class OnboardActivity extends AppCompatActivity {
         buttonLogin = findViewById(R.id.onboard_button_login);
 
         list = new ArrayList<>();
-        list.add(new OnboardModel(getString(R.string.tvTitleOnboard1), getString(R.string.tvBodyOnboard1), R.drawable.logo));
-        list.add(new OnboardModel(getString(R.string.tvTitleOnboard2), getString(R.string.tvBodyOnboard2), R.drawable.logo));
-        list.add(new OnboardModel(getString(R.string.tvTitleOnboard3), getString(R.string.tvBodyOnboard3), R.drawable.logo));
+        list.add(new OnboardModel(getString(R.string.tvTitleOnboard1), getString(R.string.tvBodyOnboard1), R.drawable.onboard1));
+        list.add(new OnboardModel(getString(R.string.tvTitleOnboard2), getString(R.string.tvBodyOnboard2), R.drawable.onboard2));
+        list.add(new OnboardModel(getString(R.string.tvTitleOnboard3), getString(R.string.tvBodyOnboard3), R.drawable.onboard3));
 
         // setup view pager & adapter
         viewPager = findViewById(R.id.onboard_viewpager);
@@ -59,7 +59,7 @@ public class OnboardActivity extends AppCompatActivity {
 
         // set event button
         buttonSkip.setOnClickListener(new onboardSkipScreen());
-        buttonNext.setOnClickListener(new onboardNextScreen ());
+        buttonNext.setOnClickListener(new onboardNextScreen());
         buttonLogin.setOnClickListener(new onboardLoginScreen());
 
         settingTabOnboard();
@@ -159,19 +159,23 @@ public class OnboardActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * event button login di onboarding screen terakhir
+     */
     private class onboardLoginScreen implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-            gotoLogin();
+            gotoPhoneRegister();
             //Toast.makeText(OnboardActivity.this, "OK", Toast.LENGTH_SHORT).show();
             //gotoLogin();
         }
 
-        private void gotoLogin() {
-            Intent intent = new Intent(OnboardActivity.this, MainActivity.class);
+        private void gotoPhoneRegister() {
+            Intent intent = new Intent(OnboardActivity.this, register.class);
             startActivity(intent);
             // replace session here
             finish();
         }
 
-    }}
+    }
+}

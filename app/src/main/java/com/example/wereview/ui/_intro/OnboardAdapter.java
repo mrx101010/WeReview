@@ -14,6 +14,7 @@ import com.example.wereview.R;
 
 import java.util.List;
 
+
 class OnboardAdapter extends PagerAdapter {
 
     private Context context;
