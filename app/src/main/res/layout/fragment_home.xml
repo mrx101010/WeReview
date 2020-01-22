@@ -6,29 +6,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/putih">
 
-    <RelativeLayout
-        android:id="@+id/relative_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_51sdp"
-        android:background="@color/bg_orange">
-
-        <EditText
-            android:id="@+id/etSearchGenre"
-            android:layout_width="@dimen/_250sdp"
-            android:layout_height="@dimen/_31sdp"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_10sdp"
-            android:background="@drawable/bg_home_search"
-            android:hint="Telusuri WeReview..."
-            android:paddingStart="@dimen/_15sdp"/>
-    </RelativeLayout>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvGenre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/relative_toolbar"
-        android:layout_marginTop="@dimen/_15sdp"/>
+        android:layout_marginTop="@dimen/_30sdp"/>
 
 </RelativeLayout>

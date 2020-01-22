@@ -37,7 +37,7 @@ public class register extends AppCompatActivity {
         btDaftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Nge Klik Coy!!!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_LONG).show();
             }
         });
     }

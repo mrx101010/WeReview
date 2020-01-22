@@ -56,7 +56,7 @@
     <EditText
         android:id="@+id/etFormPassword"
         android:layout_width="@dimen/_255sdp"
-        android:layout_height="@dimen/_37sdp"
+        android:layout_height=  "@dimen/_37sdp"
         android:background="@drawable/form"
         android:hint="Password"
         android:textAlignment="center"
@@ -82,7 +82,7 @@
         android:id="@+id/textToRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textToLogin"
+        android:text="@string/textToRegister"
         android:textSize="@dimen/_14ssp"
         android:layout_below="@+id/btMasuk"
         android:layout_marginTop="@dimen/_100sdp"
@@ -93,45 +93,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/textToRegister"
-        android:text="@string/textToLogin2"
+        android:text="@string/textToRegister2"
         android:textSize="@dimen/_14ssp"
         android:layout_below="@+id/btMasuk"
         android:layout_marginTop="@dimen/_100sdp"
         android:paddingStart="@dimen/_5sdp"
         android:textColor="@color/biru"/>
-
-
-<!--    <RelativeLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginLeft="@dimen/_42sdp"-->
-<!--        android:layout_marginTop="@dimen/_150sdp">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/belum_punya"-->
-<!--            android:layout_width="@dimen/_96sdp"-->
-<!--            android:layout_height="@dimen/_17sdp"-->
-<!--            android:layout_alignParentLeft="true"-->
-<!--            android:layout_alignParentTop="true"-->
-<!--            android:layout_marginLeft="@dimen/_54sdp"-->
-<!--            android:layout_marginTop="@dimen/_353sdp"-->
-<!--            android:gravity="top"-->
-<!--            android:text="@string/belum_punya" />-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/daftar"-->
-<!--            android:layout_width="@dimen/_42sdp"-->
-<!--            android:layout_height="@dimen/_17sdp"-->
-<!--            android:layout_alignParentLeft="true"-->
-<!--            android:layout_alignParentTop="true"-->
-<!--            android:layout_marginLeft="@dimen/_150sdp"-->
-<!--            android:layout_marginTop="@dimen/_353sdp"-->
-<!--            android:gravity="top"-->
-<!--            android:text="@string/daftar"-->
-<!--             />-->
-
-
-<!--    </RelativeLayout>-->
-
 
 </RelativeLayout>
