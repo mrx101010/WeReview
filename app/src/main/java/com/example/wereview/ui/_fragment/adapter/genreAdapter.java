@@ -1,15 +1,18 @@
 package com.example.wereview.ui._fragment.adapter;
 
 import android.content.Context;
+import android.icu.text.Transliterator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wereview.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -38,7 +41,9 @@ public class genreAdapter extends RecyclerView.Adapter<genreAdapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder holder, int position) {
         genre genre = genreList.get(position);
         holder.tvGenre.setText(genre.getGenre_name());
-        holder.ivGenre.setImageResource(genre.getPic());
+        holder.ivGenre.setImageResource(genre.getGenre_photo());
+
+
     }
 
     // total number of rows
