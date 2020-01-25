@@ -68,6 +68,7 @@
 
 
         <Button
+            android:onClick="toHome"
             android:id="@+id/btMasuk"
             android:layout_width="@dimen/_85sdp"
             android:layout_height="@dimen/_34sdp"
@@ -95,6 +96,7 @@
         android:layout_toRightOf="@+id/textToRegister"
         android:text="@string/textToRegister2"
         android:textSize="@dimen/_14ssp"
+        android:onClick="toRegister"
         android:layout_below="@+id/btMasuk"
         android:layout_marginTop="@dimen/_100sdp"
         android:paddingStart="@dimen/_5sdp"

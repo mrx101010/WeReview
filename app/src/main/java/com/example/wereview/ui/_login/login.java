@@ -26,23 +26,18 @@ public class login extends AppCompatActivity {
     btMasuk = findViewById(R.id.btMasuk);
     textToRegister = findViewById(R.id.textToRegister2);
 
-    btMasuk.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
-    });
 
-    textToRegister.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(getApplicationContext(), register.class);
-            startActivity(intent);
-            finish();
-        }
-    });
+    }
 
+    public void toHome(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void toRegister(View view) {
+        Intent intent = new Intent(getApplicationContext(), register.class);
+        startActivity(intent);
+        finish();
     }
 }
