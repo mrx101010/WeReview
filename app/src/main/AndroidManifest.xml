@@ -9,33 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".ui._intro.SplashActivity"
-            android:theme="@style/AppTheme.Fullscreen"
-            android:screenOrientation="portrait">
+        <activity android:name=".ui._subpost.SubGenre"></activity>
+        <activity
+            android:name=".ui._intro.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui._login.login"
-            android:theme="@style/AppTheme.Fullscreen"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".ui._register.register"
-            android:theme="@style/AppTheme.Fullscreen"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".ui._intro.OnboardActivity"
-            android:theme="@style/AppTheme.Fullscreen"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".ui._login.login"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Fullscreen" />
+        <activity
+            android:name=".ui._register.register"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Fullscreen" />
+        <activity
+            android:name=".ui._intro.OnboardActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Fullscreen" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

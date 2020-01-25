@@ -23,8 +23,8 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-    btMasuk = findViewById(R.id.btMasuk);
-    textToRegister = findViewById(R.id.textToRegister2);
+        btMasuk = findViewById(R.id.btMasuk);
+        textToRegister = findViewById(R.id.textToRegister2);
 
 
     }
