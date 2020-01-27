@@ -2,42 +2,42 @@ package com.example.wereview.ui._fragment.adapter;
 
 public class genre {
 
-    private String genre_name;
-    private String genre_id;
-    private int genre_photo;
+    private String genreId;
+    private String genreName;
+    private String genrePhoto;
 
     public genre() {
     }
 
-    public genre(String genre_name, String genre_id, int genre_photo) {
-        this.genre_name = genre_name;
-        this.genre_id = genre_id;
-        this.genre_photo = genre_photo;
-    }
-
-    public String getGenre_name() {
-        return genre_name;
-    }
-
-    public void setGenre_name(String genre_name) {
-        this.genre_name = genre_name;
+    public genre(String genreId, String genreName, String genrePhoto) {
+        this.genreId = genreId;
+        this.genreName = genreName;
+        this.genrePhoto = genrePhoto;
     }
 
 
-    public String getGenre_id() {
-        return genre_id;
+    public String getGenreId() {
+        return genreId;
     }
 
-    public void setGenre_id(String genre_id) {
-        this.genre_id = genre_id;
+    public void setGenreId(String genreId) {
+        this.genreId = genreId;
     }
 
-    public int getGenre_photo() {
-        return genre_photo;
+    public String getGenreName() {
+        return genreName;
     }
 
-    public void setGenre_photo(int genre_photo) {
-        this.genre_photo = genre_photo;
+    public void setGenreName(String genreName) {
+        this.genreName = genreName;
+    }
+
+    public String getGenrePhoto() {
+        return genrePhoto;
+    }
+
+    public void setGenrePhoto(String genrePhoto) {
+        this.genrePhoto = genrePhoto;
     }
 }
 

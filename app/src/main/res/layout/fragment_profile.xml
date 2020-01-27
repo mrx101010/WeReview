@@ -1,17 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#c452"
+    android:layout_height="match_parent">
 
-    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_profil"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@color/bg_orange">
 
-    <TextView
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profil"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/geometria_medium"
+            android:paddingStart="@dimen/_5sdp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/relative_profil"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Profile"
-        android:textColor="#fff"
-        android:textSize="75dp" />
+        android:layout_below="@+id/toolbar_profil">
 
+        <ImageView
+            android:id="@+id/ivProfil"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@drawable/ic_profile"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_15sdp"/>
+
+        <TextView
+            android:id="@+id/tvNamaProfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arif Rachmat Darmawan"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/geometria_bold"
+            android:layout_toRightOf="@+id/ivProfil"
+            android:layout_marginTop="@dimen/_21sdp"
+            android:layout_marginStart="@dimen/_15sdp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/buttonabu"
+            android:text="Edit Profil"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_toRightOf="@+id/ivProfil"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_below="@id/tvNamaProfil"/>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/relative_profil"
+        android:layout_marginTop="@dimen/_20sdp"/>
 </RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="43dp">
+        <RelativeLayout
+            android:id="@+id/relative_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_subgenre_photo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/Trippie" />
+
+        </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_below="@id/relative_item">
+
+                <Button
+                    android:id="@+id/btLike"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:background="@drawable/ic_love"/>
+
+                    <Button
+                        android:id="@+id/btKomen"
+                        android:layout_width="@dimen/_35sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_toRightOf="@id/btLike"
+                        android:background="@drawable/ic_comment"
+                        android:layout_marginLeft="@dimen/_5sdp"/>
+
+                <Button
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_toRightOf="@+id/btKomen"
+                    android:background="@drawable/ic_laporkan"
+                    android:layout_marginLeft="@dimen/_130sdp"/>
+
+            </RelativeLayout>
+</RelativeLayout>

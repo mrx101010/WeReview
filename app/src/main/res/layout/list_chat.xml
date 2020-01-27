@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relative_profil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivProfil"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:background="@drawable/ic_profile"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_15sdp"/>
+
+        <TextView
+            android:id="@+id/tvNamaProfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Arif Rachmat Darmawan"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/geometria_bold"
+            android:layout_toRightOf="@+id/ivProfil"
+            android:layout_marginTop="@dimen/_23sdp"
+            android:layout_marginStart="@dimen/_15sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hi Lagi Apa?"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/geometria_regular"
+            android:layout_toRightOf="@id/ivProfil"
+            android:layout_below="@+id/tvNamaProfil"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"/>
+    </RelativeLayout>
+
+</LinearLayout>

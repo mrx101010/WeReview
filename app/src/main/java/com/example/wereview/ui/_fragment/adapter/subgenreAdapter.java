@@ -1,13 +1,11 @@
 package com.example.wereview.ui._fragment.adapter;
 
 import android.content.Context;
-import android.icu.text.Transliterator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,22 +14,22 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class genreAdapter extends RecyclerView.Adapter<genreAdapter.ViewHolder> {
+public class subgenreAdapter extends RecyclerView.Adapter<subgenreAdapter.ViewHolder> {
 
-    private List<genre> genreList;
+    private List<subgenre> subgenreList;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
     // data is passed into the constructor
-    public genreAdapter(Context context, List<genre> data) {
+    public subgenreAdapter(Context context, List<subgenre> data) {
         this.mInflater = LayoutInflater.from(context);
-        this.genreList = data;
+        this.subgenreList = data;
     }
 
     // inflates the row layout from xml when needed
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.item_genre, parent, false);
+        View view = mInflater.inflate(R.layout.item_subgenre, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
@@ -39,28 +37,28 @@ public class genreAdapter extends RecyclerView.Adapter<genreAdapter.ViewHolder> 
     // binds the data to the textview in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        genre genre = genreList.get(position);
-        holder.tvGenre.setText(genre.getGenreName());
-        Picasso.get().load(genre.getGenrePhoto()).into(holder.ivGenre);
+        subgenre subgenre = subgenreList.get(position);
+        holder.tvSubGenre.setText(subgenre.getSubgenreName());
+        Picasso.get().load(subgenre.getSubgenrePhoto()).into(holder.ivSubGenre);
 
     }
 
     // total number of rows
     @Override
     public int getItemCount() {
-        return genreList.size();
+        return subgenreList.size();
     }
 
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView tvGenre;
-        public ImageView ivGenre;
+        public TextView tvSubGenre;
+        public ImageView ivSubGenre;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvGenre = (TextView) itemView.findViewById(R.id.tv_genre_name);
-            ivGenre = (ImageView) itemView.findViewById(R.id.iv_genre_photo);
+            tvSubGenre = (TextView) itemView.findViewById(R.id.tv_subgenre_name);
+            ivSubGenre = (ImageView) itemView.findViewById(R.id.iv_subgenre_photo);
             itemView.setOnClickListener(this);
         }
 

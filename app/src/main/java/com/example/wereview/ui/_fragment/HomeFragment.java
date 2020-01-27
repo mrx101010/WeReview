@@ -1,5 +1,6 @@
 package com.example.wereview.ui._fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +13,16 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.wereview.MainActivity;
 import com.example.wereview.R;
+import com.example.wereview.ui._fragment.adapter.RecyclerItemClickListener;
 import com.example.wereview.ui._fragment.adapter.genre;
 import com.example.wereview.ui._fragment.adapter.genreAdapter;
+import com.example.wereview.ui._subpost.SubGenre;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +33,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView.LayoutManager mLayoutManager;
     private List <genre> genreList;
     private com.example.wereview.ui._fragment.adapter.genreAdapter genreAdapter;
+    DatabaseReference databaseArtists;
+    genre genre;
 
     String [] genre_names = {
             "Otomotif", "Makanan"
@@ -41,6 +50,7 @@ public class HomeFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        databaseArtists = FirebaseDatabase.getInstance().getReference("genre");
         mRecyclerView = view.findViewById(R.id.rvGenre);
         if (mRecyclerView != null){
             mRecyclerView.setHasFixedSize(true);
@@ -52,20 +62,56 @@ public class HomeFragment extends Fragment {
 
         genreList = new ArrayList<>();
 
-        for (int i = 0; i < genre_names.length; i++){
-            genre genre = new genre(genre_names[i], i+1 + "", pics[i]);
-            genreList.add(genre);
-        }
-
-        genreAdapter = new genreAdapter(getContext(),genreList);
-
-        mRecyclerView.setAdapter(genreAdapter);
-        genreAdapter.notifyDataSetChanged();
 
 
         return view;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        databaseArtists.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                genreList.clear();
+
+                for (DataSnapshot artistSnapshot : dataSnapshot.getChildren()){
+                    genre genre = artistSnapshot.getValue(genre.class);
+                    genreList.add(genre);
+
+
+
+
+                }
+
+                genreAdapter adapter = new genreAdapter(getContext(), genreList);
+                mRecyclerView.setAdapter(adapter);
+
+                mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        position += 1;
+                        Toast.makeText(getContext(), "Card at " + position + " is clicked", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(getContext(), SubGenre.class);
+                        intent.putExtra("subgenre", position);
+                        startActivity(intent);
+
+
+                    }
+
+                }));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 }
 
 
