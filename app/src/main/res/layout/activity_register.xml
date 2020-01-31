@@ -113,6 +113,7 @@
         android:paddingStart="@dimen/_65sdp" />
 
     <TextView
+        android:onClick="toLogin"
         android:id="@+id/textToLogin2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

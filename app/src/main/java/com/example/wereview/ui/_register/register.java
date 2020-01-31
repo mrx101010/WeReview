@@ -49,12 +49,14 @@ public class register extends AppCompatActivity {
         String username = etFormUsername.getText().toString().trim();
         String email = etFormEmail.getText().toString().trim();
         String password = etFormPassword.getText().toString().trim();
+        String level = "Beginner";
+        String poin = "0";
 
         if(!TextUtils.isEmpty(nama)){
 
             String id= databaseUser.push().getKey();
 
-            regis regis = new regis(id, nama, username,email,password);
+            regis regis = new regis(id, nama, username,email,password, level,poin);
 
             databaseUser.child(id).setValue(regis);
 
@@ -62,5 +64,10 @@ public class register extends AppCompatActivity {
         }else{
             Toast.makeText(this,"isi nama!", Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void toLogin(View view) {
+        Intent intent = new Intent(register.this, login.class);
+        startActivity(intent);
     }
 }
