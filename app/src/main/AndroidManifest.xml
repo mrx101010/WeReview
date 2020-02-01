@@ -19,6 +19,7 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".ui._feed.Feed"></activity>
         <activity android:name=".ui._chatroom.ActivityChatroom" />
         <activity android:name=".ui._subpost.SubGenre" />
         <activity

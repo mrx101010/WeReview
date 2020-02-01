@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.wereview.MainActivity;
 import com.example.wereview.R;
 import com.example.wereview.ui._login.login;
 import com.google.firebase.database.DatabaseReference;
@@ -41,8 +40,6 @@ public class register extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AddRegister();
-                Intent intent = new Intent(register.this, MainActivity.class);
-                startActivity(intent);
             }
         });
     }
@@ -52,12 +49,14 @@ public class register extends AppCompatActivity {
         String username = etFormUsername.getText().toString().trim();
         String email = etFormEmail.getText().toString().trim();
         String password = etFormPassword.getText().toString().trim();
+        String level = "Beginner";
+        String poin = "0";
 
         if(!TextUtils.isEmpty(nama)){
 
             String id= databaseUser.push().getKey();
 
-            regis regis = new regis(id, nama, username,email,password);
+            regis regis = new regis(id, nama, username,email,password, level,poin);
 
             databaseUser.child(id).setValue(regis);
 
@@ -67,11 +66,8 @@ public class register extends AppCompatActivity {
         }
     }
 
-
     public void toLogin(View view) {
-        Intent intent = new Intent(getApplicationContext(), login.class);
+        Intent intent = new Intent(register.this, login.class);
         startActivity(intent);
-        finish();
-
     }
 }

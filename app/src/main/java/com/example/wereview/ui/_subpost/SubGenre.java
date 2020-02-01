@@ -12,10 +12,9 @@ import android.widget.Toast;
 
 import com.example.wereview.R;
 import com.example.wereview.ui._fragment.adapter.RecyclerItemClickListener;
-import com.example.wereview.ui._fragment.adapter.genre;
-import com.example.wereview.ui._fragment.adapter.genreAdapter;
 import com.example.wereview.ui._fragment.adapter.subgenre;
 import com.example.wereview.ui._fragment.adapter.subgenreAdapter;
+import com.example.wereview.ui._feed.Feed;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -69,14 +68,9 @@ public class SubGenre extends AppCompatActivity {
             Toast.makeText(SubGenre.this, j + "", Toast.LENGTH_SHORT).show();
         }
 
-        String sub = "";
-        if (j == 1){
-            sub = "genre1";
-        } else if (j == 2){
-            sub = "genre2";
-        }
 
-        databaseArtists.orderByChild("parent").equalTo(sub).addValueEventListener(new ValueEventListener() {
+        final int finalJ = j;
+        databaseArtists.orderByChild("parent").equalTo("genre" + j).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -94,8 +88,12 @@ public class SubGenre extends AppCompatActivity {
                     @Override
                     public void onItemClick(View view, int position) {
                         position += 1;
-                        Toast.makeText(SubGenre.this, "Card at " + position + " is clicked", Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(SubGenre.this, "sg" + position + "-" + finalJ, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(SubGenre.this, Feed.class);
+                        intent.putExtra("subgenre", position);
+                        intent.putExtra("genre", finalJ);
+                        startActivity(intent);
+                        finish();
 
                     }
 
