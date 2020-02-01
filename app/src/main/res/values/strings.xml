@@ -13,4 +13,12 @@
     <string name="tvTitleOnboard3">Tampilan Friendly!</string>
     <string name="tvBodyOnboard3">Tampilan diaplikasi ini memudahkan kamu untuk memahami aplikasi ini!</string>
     <string name="textToRegister2">Daftar</string>
+    <string-array name="judulGenre">
+        <item>Otomotif</item>
+        <item>Teknologi</item>
+    </string-array>
+    <string-array name="jenisGenre">
+        <item>Motor</item>
+        <item>Mobil</item>
+    </string-array>
 </resources>

@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui._chatroom.ActivityChatroom"></activity>
+        <activity android:name=".ui._detail_feed.DetailActivity"></activity>
+        <activity android:name=".ui._fragment.ActivityAdd"
+            android:theme="@style/AppTheme.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".ui._chatroom.ActivityChatroom" />
         <activity android:name=".ui._subpost.SubGenre" />
         <activity
             android:name=".ui._intro.SplashActivity"

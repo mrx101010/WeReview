@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.net.wifi.aware.PeerHandle;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.wereview.ui._fragment.ActivityAdd;
 import com.example.wereview.ui._fragment.AddFragment;
 import com.example.wereview.ui._fragment.ChatFragment;
 import com.example.wereview.ui._fragment.HomeFragment;
@@ -22,18 +24,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomnav= findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomnav = findViewById(R.id.bottom_navigation);
         bottomnav.inflateMenu(R.menu.bottom_navigation);
         bottomnav.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
 
-                    switch (item.getItemId()){
+                    switch (item.getItemId()) {
                         case R.id.nav_home:
                             selectedFragment = new HomeFragment();
                             break;
@@ -41,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new LoveFragment();
                             break;
                         case R.id.nav_add:
-                            selectedFragment = new AddFragment();
+                            Intent intent = new Intent(MainActivity.this, ActivityAdd.class);
+                            startActivity(intent);
                             break;
                         case R.id.nav_chat:
                             selectedFragment = new ChatFragment();
@@ -50,12 +54,20 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new ProfileFragment();
                             break;
                     }
-
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
-
-                    return true;
+                    return loadFragment(selectedFragment);
                 }
-            };
+
+                private boolean loadFragment(Fragment fragment) {
+                    if (fragment != null) {
+                        getSupportFragmentManager()
+                                .beginTransaction()
+                                .replace(R.id.fragment_container, fragment)
+                                .commit();
+                        return true;
+                    }
+                    return false;
+                }};
 
 }
+
+

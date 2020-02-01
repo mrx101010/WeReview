@@ -8,15 +8,16 @@
 
     <ImageView
         android:id="@+id/ivImageOnboard"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_400sdp"
-        android:layout_alignParentTop="true"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_250sdp"
         android:background="@color/putih"
+        android:layout_marginTop="@dimen/_70sdp"
+        android:layout_marginLeft="@dimen/_30sdp"
         android:scaleType="centerCrop" />
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_150sdp"
         android:layout_alignParentBottom="true">
 
         <RelativeLayout
@@ -34,7 +35,8 @@
                 android:text="@string/tvTitleOnboard1"
                 android:textAlignment="center"
                 android:textColor="@color/text1"
-                android:textSize="@dimen/_16ssp" />
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginBottom="@dimen/_10sdp"/>
 
             <TextView
                 android:id="@+id/tvBodyOnboard"
@@ -42,8 +44,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvTitleOnboard"
                 android:layout_marginHorizontal="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:layout_marginBottom="@dimen/_72sdp"
                 android:fontFamily="@font/geometria_regular"
                 android:paddingStart="@dimen/dim_32dp"
                 android:paddingEnd="@dimen/dim_32dp"
@@ -51,10 +51,6 @@
                 android:textAlignment="center"
                 android:textColor="@color/text1"
                 android:textSize="@dimen/_13ssp" />
-
         </RelativeLayout>
-
     </FrameLayout>
-
-
 </RelativeLayout>

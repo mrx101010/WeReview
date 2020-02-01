@@ -51,7 +51,6 @@
             android:textSize="@dimen/_10ssp"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_toRightOf="@+id/ivProfil"
-            android:layout_marginStart="@dimen/_8sdp"
             android:layout_below="@id/tvNamaProfil"/>
     </RelativeLayout>
 

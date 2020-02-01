@@ -47,9 +47,9 @@ public class OnboardActivity extends AppCompatActivity {
         buttonLogin = findViewById(R.id.onboard_button_login);
 
         list = new ArrayList<>();
-        list.add(new OnboardModel(getString(R.string.tvTitleOnboard1), getString(R.string.tvBodyOnboard1), R.drawable.onboard1));
-        list.add(new OnboardModel(getString(R.string.tvTitleOnboard2), getString(R.string.tvBodyOnboard2), R.drawable.onboard2));
-        list.add(new OnboardModel(getString(R.string.tvTitleOnboard3), getString(R.string.tvBodyOnboard3), R.drawable.onboard3));
+        list.add(new OnboardModel(getString(R.string.tvTitleOnboard1), getString(R.string.tvBodyOnboard1), R.drawable.logo));
+        list.add(new OnboardModel(getString(R.string.tvTitleOnboard2), getString(R.string.tvBodyOnboard2), R.drawable.logo));
+        list.add(new OnboardModel(getString(R.string.tvTitleOnboard3), getString(R.string.tvBodyOnboard3), R.drawable.logo));
 
         // setup view pager & adapter
         viewPager = findViewById(R.id.onboard_viewpager);
