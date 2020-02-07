@@ -44,13 +44,15 @@
             android:layout_marginStart="@dimen/_15sdp"/>
 
         <Button
+            android:id="@+id/btEdit"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_30sdp"
             android:background="@drawable/buttonabu"
-            android:text="Edit Profil"
+            android:text="Edit Profile"
             android:textSize="@dimen/_10ssp"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_toRightOf="@+id/ivProfil"
+            android:onClick="toEdit"
             android:layout_below="@id/tvNamaProfil"/>
     </RelativeLayout>
 
