@@ -45,10 +45,11 @@
         android:layout_width="@dimen/_255sdp"
         android:layout_height="@dimen/_37sdp"
         android:background="@drawable/form"
-        android:hint="Username"
+        android:hint="Email"
         android:textAlignment="center"
         android:padding="8dp"
-        android:drawableLeft="@drawable/ic_person"
+        android:inputType="textEmailAddress"
+        android:drawableLeft="@drawable/ic_email"
         android:layout_marginLeft="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_70sdp"
         android:layout_below="@+id/ivLogo" />

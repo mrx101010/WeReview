@@ -9,13 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui._detail_feed.DetailActivity"></activity>
-        <activity android:name=".ui._fragment.ActivityAdd"
-            android:theme="@style/AppTheme.Fullscreen">
-        </activity>
-        <activity android:name=".ui._feed.Feed"></activity>
-        <activity android:name=".ui._chatroom.ActivityChatroom" />
-        <activity android:name=".ui._subpost.SubGenre" />
         <activity
             android:name=".ui._intro.SplashActivity"
             android:screenOrientation="portrait"
@@ -26,22 +19,50 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".ui._edit_profil.EditActivity"
+            android:theme="@style/AppTheme.Fullscreen"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui._detail_feed.DetailActivity"
+            android:theme="@style/AppTheme.Fullscreen"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui._fragment.ActivityAdd"
+            android:theme="@style/AppTheme.Fullscreen"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui._feed.Feed"
+            android:theme="@style/AppTheme.Fullscreen"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui._chatroom.ActivityChatroom"
+            android:theme="@style/AppTheme.Fullscreen"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui._subpost.SubGenre"
+            android:theme="@style/AppTheme.Fullscreen"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".ui._login.login"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Fullscreen" />
+            android:theme="@style/AppTheme.Fullscreen"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".ui._register.register"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Fullscreen" />
+            android:theme="@style/AppTheme.Fullscreen"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".ui._intro.OnboardActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Fullscreen" />
+            android:theme="@style/AppTheme.Fullscreen"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-    </application>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
 
+    </application>
 </manifest>

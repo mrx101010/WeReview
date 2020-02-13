@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui._edit_profil.EditActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_edit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:background="@color/bg_orange">
+
+        <ImageButton
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/ic_close"
+            android:layout_marginRight="@dimen/_10sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/geometria_bold" />
+
+        <ImageButton
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@drawable/ic_done"
+            android:layout_marginLeft="@dimen/_150sdp"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/ivProfil"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:background="@drawable/ic_profile"
+        android:layout_below="@id/toolbar_edit"
+        android:layout_marginStart="@dimen/_120sdp"
+        android:layout_marginTop="@dimen/_25sdp" />
+
+<TextView
+    android:id="@+id/tvGantiFoto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/ivProfil"
+    android:text="Ganti Foto Profil"
+    android:gravity="center"
+    android:textSize="@dimen/_14ssp"
+    android:fontFamily="@font/geometria_medium"
+    android:layout_marginTop="@dimen/_15sdp"/>
+
+    <EditText
+        android:id="@+id/etFormNama"
+        android:layout_width="@dimen/_255sdp"
+        android:layout_height="@dimen/_37sdp"
+        android:hint="Nama"
+        android:padding="8dp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_below="@+id/tvGantiFoto" />
+
+    <EditText
+        android:id="@+id/etFormUsername"
+        android:layout_width="@dimen/_255sdp"
+        android:layout_height="@dimen/_37sdp"
+        android:hint="Username"
+        android:padding="8dp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_below="@+id/etFormNama" />
+
+    <EditText
+        android:id="@+id/etFormEmail"
+        android:layout_width="@dimen/_255sdp"
+        android:layout_height="@dimen/_37sdp"
+        android:hint="Email"
+        android:padding="8dp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_below="@+id/etFormUsername" />
+
+    <EditText
+        android:id="@+id/etFormPassword"
+        android:inputType="textPassword"
+        android:layout_width="@dimen/_255sdp"
+        android:layout_height="@dimen/_37sdp"
+        android:hint="Password"
+        android:padding="8dp"
+        android:layout_marginLeft="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_below="@+id/etFormEmail" />
+
+</RelativeLayout>

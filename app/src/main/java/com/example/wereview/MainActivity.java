@@ -8,7 +8,9 @@ import android.content.Intent;
 import android.net.wifi.aware.PeerHandle;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.example.wereview.ui._edit_profil.EditActivity;
 import com.example.wereview.ui._fragment.ActivityAdd;
 import com.example.wereview.ui._fragment.AddFragment;
 import com.example.wereview.ui._fragment.ChatFragment;
@@ -68,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
                     return false;
                 }};
 
+    public void toEdit(View view) {
+        Intent intent = new Intent(getApplicationContext(), EditActivity.class);
+        startActivity(intent);
+    }
 }
 
 
