@@ -14,9 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wereview.R;
+import com.example.wereview.ui._fragment.adapter.Genre;
+import com.example.wereview.ui._fragment.adapter.GenreAdapter;
 import com.example.wereview.ui._fragment.adapter.RecyclerItemClickListener;
-import com.example.wereview.ui._fragment.adapter.genre;
-import com.example.wereview.ui._fragment.adapter.genreAdapter;
 import com.example.wereview.ui._subpost.SubGenre;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,10 +31,10 @@ public class HomeFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
-    private List <genre> genreList;
-    private com.example.wereview.ui._fragment.adapter.genreAdapter genreAdapter;
+    private List <Genre> genreList;
+    private GenreAdapter genreAdapter;
     DatabaseReference databaseArtists;
-    genre genre;
+    Genre genre;
 
     String [] genre_names = {
             "Otomotif", "Makanan"
@@ -78,7 +78,7 @@ public class HomeFragment extends Fragment {
                 genreList.clear();
 
                 for (DataSnapshot artistSnapshot : dataSnapshot.getChildren()){
-                    genre genre = artistSnapshot.getValue(genre.class);
+                    Genre genre = artistSnapshot.getValue(Genre.class);
                     genreList.add(genre);
 
 
@@ -86,7 +86,7 @@ public class HomeFragment extends Fragment {
 
                 }
 
-                genreAdapter adapter = new genreAdapter(getContext(), genreList);
+                GenreAdapter adapter = new GenreAdapter(getContext(), genreList);
                 mRecyclerView.setAdapter(adapter);
 
                 mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), new RecyclerItemClickListener.OnItemClickListener() {
@@ -96,7 +96,7 @@ public class HomeFragment extends Fragment {
                         Toast.makeText(getContext(), "Card at " + position + " is clicked", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(getContext(), SubGenre.class);
-                        intent.putExtra("subgenre", position);
+                        intent.putExtra("Subgenre", position);
                         startActivity(intent);
 
 

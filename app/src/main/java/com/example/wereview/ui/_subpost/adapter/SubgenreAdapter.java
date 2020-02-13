@@ -1,4 +1,4 @@
-package com.example.wereview.ui._fragment.adapter;
+package com.example.wereview.ui._subpost.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,14 +14,14 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class subgenreAdapter extends RecyclerView.Adapter<subgenreAdapter.ViewHolder> {
+public class SubgenreAdapter extends RecyclerView.Adapter<SubgenreAdapter.ViewHolder> {
 
-    private List<subgenre> subgenreList;
+    private List<Subgenre> subgenreList;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
 
     // data is passed into the constructor
-    public subgenreAdapter(Context context, List<subgenre> data) {
+    public SubgenreAdapter(Context context, List<Subgenre> data) {
         this.mInflater = LayoutInflater.from(context);
         this.subgenreList = data;
     }
@@ -37,7 +37,7 @@ public class subgenreAdapter extends RecyclerView.Adapter<subgenreAdapter.ViewHo
     // binds the data to the textview in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        subgenre subgenre = subgenreList.get(position);
+        Subgenre subgenre = subgenreList.get(position);
         holder.tvSubGenre.setText(subgenre.getSubgenreName());
         Picasso.get().load(subgenre.getSubgenrePhoto()).into(holder.ivSubGenre);
 

@@ -1,15 +1,14 @@
 package com.example.wereview.ui._fragment.adapter;
 
-public class genre {
-
+public class Genre {
     private String genreId;
     private String genreName;
     private String genrePhoto;
 
-    public genre() {
+    public Genre() {
     }
 
-    public genre(String genreId, String genreName, String genrePhoto) {
+    public Genre(String genreId, String genreName, String genrePhoto) {
         this.genreId = genreId;
         this.genreName = genreName;
         this.genrePhoto = genrePhoto;
@@ -40,6 +39,3 @@ public class genre {
         this.genrePhoto = genrePhoto;
     }
 }
-
-
-

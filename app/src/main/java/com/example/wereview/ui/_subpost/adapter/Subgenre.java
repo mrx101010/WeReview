@@ -1,16 +1,16 @@
-package com.example.wereview.ui._fragment.adapter;
+package com.example.wereview.ui._subpost.adapter;
 
-public class subgenre {
+public class Subgenre {
 
     private String subgenreId;
     private String subgenreName;
     private String subgenrePhoto;
     private String parent;
 
-    public subgenre() {
+    public Subgenre() {
     }
 
-    public subgenre(String subgenreId, String subgenreName, String subgenrePhoto, String parent) {
+    public Subgenre(String subgenreId, String subgenreName, String subgenrePhoto, String parent) {
         this.subgenreId = subgenreId;
         this.subgenreName = subgenreName;
         this.subgenrePhoto = subgenrePhoto;

@@ -11,9 +11,10 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.wereview.R;
+import com.example.wereview.ui._fragment.adapter.GenreAdapter;
 import com.example.wereview.ui._fragment.adapter.RecyclerItemClickListener;
-import com.example.wereview.ui._fragment.adapter.subgenre;
-import com.example.wereview.ui._fragment.adapter.subgenreAdapter;
+import com.example.wereview.ui._subpost.adapter.Subgenre;
+import com.example.wereview.ui._subpost.adapter.SubgenreAdapter;
 import com.example.wereview.ui._feed.Feed;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,8 +32,8 @@ public class SubGenre extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
-    private List<subgenre> subgenreList;
-    private com.example.wereview.ui._fragment.adapter.genreAdapter genreAdapter;
+    private List<Subgenre> subgenreList;
+    private GenreAdapter genreAdapter;
     DatabaseReference databaseArtists;
 
     @Override
@@ -64,7 +65,7 @@ public class SubGenre extends AppCompatActivity {
         Bundle b = intentsubgenre.getExtras();
         int j = 0;
         if (b != null) {
-            j = (int) b.get("subgenre");
+            j = (int) b.get("Subgenre");
             Toast.makeText(SubGenre.this, j + "", Toast.LENGTH_SHORT).show();
         }
 
@@ -77,11 +78,11 @@ public class SubGenre extends AppCompatActivity {
                 subgenreList.clear();
 
                 for (DataSnapshot artistSnapshot : dataSnapshot.getChildren()) {
-                    subgenre subgenres = artistSnapshot.getValue(subgenre.class);
+                    Subgenre subgenres = artistSnapshot.getValue(Subgenre.class);
                     subgenreList.add(subgenres);
                 }
 
-                subgenreAdapter adapter = new subgenreAdapter(SubGenre.this, subgenreList);
+                SubgenreAdapter adapter = new SubgenreAdapter(SubGenre.this, subgenreList);
                 mRecyclerView.setAdapter(adapter);
 
                 mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(SubGenre.this, new RecyclerItemClickListener.OnItemClickListener() {
@@ -90,8 +91,8 @@ public class SubGenre extends AppCompatActivity {
                         position += 1;
                         Toast.makeText(SubGenre.this, "sg" + position + "-" + finalJ, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(SubGenre.this, Feed.class);
-                        intent.putExtra("subgenre", position);
-                        intent.putExtra("genre", finalJ);
+                        intent.putExtra("Subgenre", position);
+                        intent.putExtra("Genre", finalJ);
                         startActivity(intent);
                         finish();
 

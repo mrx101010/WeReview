@@ -1,4 +1,4 @@
-package com.example.wereview.ui._feed.adapter;
+package com.example.wereview.ui._fragment.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,59 +10,54 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wereview.R;
-import com.example.wereview.ui._fragment.adapter.GenreAdapter;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
-    private List<Post> postList;
+public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder>{
+    private List<Genre> genreList;
     private LayoutInflater mInflater;
     private GenreAdapter.ItemClickListener mClickListener;
 
     // data is passed into the constructor
-    public PostAdapter(Context context, List<Post> data) {
+    public GenreAdapter(Context context, List<Genre> data) {
         this.mInflater = LayoutInflater.from(context);
-        this.postList = data;
+        this.genreList = data;
     }
 
     // inflates the row layout from xml when needed
     @Override
-    public PostAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.item_feed, parent, false);
-        PostAdapter.ViewHolder viewHolder = new PostAdapter.ViewHolder(view);
+    public GenreAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = mInflater.inflate(R.layout.item_genre, parent, false);
+        GenreAdapter.ViewHolder viewHolder = new GenreAdapter.ViewHolder(view);
         return viewHolder;
     }
 
     // binds the data to the textview in each row
     @Override
-    public void onBindViewHolder(PostAdapter.ViewHolder holder, int position) {
-        Post post= postList.get(position);
-        holder.tvFeed.setText(post.getCaption());
-        Picasso.get().load(post.getDownloadUrl()).into(holder.ivFeed);
+    public void onBindViewHolder(GenreAdapter.ViewHolder holder, int position) {
+        Genre genre = genreList.get(position);
+        holder.tvGenre.setText(genre.getGenreName());
+        Picasso.get().load(genre.getGenrePhoto()).into(holder.ivGenre);
 
     }
 
-    // Return the size of your dataset (invoked by the layout manager)
+    // total number of rows
     @Override
     public int getItemCount() {
-        return postList.size();
+        return genreList.size();
     }
 
-    public void addImage(Post post) {
-        postList.add(0, post);
-        notifyDataSetChanged();
-    }
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public TextView tvFeed;
-        public ImageView ivFeed;
+        public TextView tvGenre;
+        public ImageView ivGenre;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            tvFeed = (TextView) itemView.findViewById(R.id.tv_feed_name);
-            ivFeed = (ImageView) itemView.findViewById(R.id.iv_feed_photo);
+            tvGenre = (TextView) itemView.findViewById(R.id.tv_genre_name);
+            ivGenre = (ImageView) itemView.findViewById(R.id.iv_genre_photo);
             itemView.setOnClickListener(this);
         }
 

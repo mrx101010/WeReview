@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.wereview.MainActivity;
 import com.example.wereview.R;
+import com.example.wereview.ui._feed.Feed;
 import com.example.wereview.ui._register.register;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -37,9 +38,9 @@ public class login extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        etFormEmail = (EditText) findViewById(R.id.etFormEmail);
-        etFormPassword = (EditText) findViewById(R.id.etFormPassword);
-        btMasuk = (Button) findViewById(R.id.btMasuk);
+        etFormEmail = findViewById(R.id.etFormUsername);
+        etFormPassword = findViewById(R.id.etFormPassword);
+        btMasuk = findViewById(R.id.btMasuk);
 
         btMasuk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,9 +63,9 @@ public class login extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Login sukses, masuk ke Main Activity
                                     FirebaseUser user = mAuth.getCurrentUser();
+                                    Toast.makeText(login.this, "Selamat Datang " + user, Toast.LENGTH_LONG).show();
                                     Intent intent = new Intent(login.this, MainActivity.class);
                                     startActivity(intent);
-                                    Toast.makeText(login.this, "Selamat Datang " + user, Toast.LENGTH_LONG).show();
                                     finish();
                                 } else {
                                     // Jika Login gagal, memberikan pesan
@@ -78,9 +79,7 @@ public class login extends AppCompatActivity {
     }
 
     public void toHome(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-        finish();
+
     }
 
     public void toRegister(View view) {

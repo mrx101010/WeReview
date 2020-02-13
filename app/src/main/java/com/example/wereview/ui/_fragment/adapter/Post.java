@@ -1,7 +1,6 @@
-package com.example.wereview.ui._feed.adapter;
+package com.example.wereview.ui._fragment.adapter;
 
 import com.example.wereview.ui._register.regis;
-import com.firebase.ui.auth.data.model.User;
 import com.google.firebase.database.Exclude;
 
 public class Post {
