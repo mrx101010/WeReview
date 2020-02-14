@@ -66,23 +66,8 @@ public class ActivityAdd extends AppCompatActivity implements AdapterView.OnItem
         spinnerGenre = findViewById(R.id.spinnerGenre);
         spinnerSubGenre = findViewById(R.id.spinnerJenis);
 
-        // Stringprep
-        description = etDescription.toString();
-        namaProduk = etNamaProduk.toString();
-        genreParent = spinnerGenre.getSelectedItem().toString();
-        subgenreParent = spinnerSubGenre.getSelectedItem().toString();
-
-        if (genreParent.equalsIgnoreCase("otomotif")){
-            genreParent = "genre2";
-        }else if (genreParent.equalsIgnoreCase("tech")){
-            genreParent = "genre1";
-        }
-
-        if (subgenreParent.equalsIgnoreCase("motor")){
-            subgenreParent = "sg1-2";
-        }else if (subgenreParent.equalsIgnoreCase("mobil")){
-            subgenreParent = "sg2-2";
-        }
+        description = etDescription.getText().toString();
+        namaProduk = etNamaProduk.getText().toString();
 
         fbUser = FirebaseAuth.getInstance().getCurrentUser();
         if (fbUser == null) {
@@ -91,15 +76,13 @@ public class ActivityAdd extends AppCompatActivity implements AdapterView.OnItem
 
         database = FirebaseDatabase.getInstance().getReference();
 
-        Spinner spinner = findViewById(R.id.spinnerGenre);
-        Spinner spinner1 = findViewById(R.id.spinnerJenis);
         image_post = findViewById(R.id.ibFotoProduk);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.judulGenre, android.R.layout.simple_spinner_item);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.jenisGenre, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner1.setAdapter(adapter1);
+        spinnerGenre.setAdapter(adapter);
+        spinnerSubGenre.setAdapter(adapter1);
 
 
     }
@@ -154,6 +137,24 @@ public class ActivityAdd extends AppCompatActivity implements AdapterView.OnItem
             btUpload.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    // Stringprep
+                    description = etDescription.getText().toString();
+                    namaProduk = etNamaProduk.getText().toString();
+                    genreParent = spinnerGenre.getSelectedItem().toString();
+                    subgenreParent = spinnerSubGenre.getSelectedItem().toString();
+
+                    if (genreParent.equalsIgnoreCase("otomotif")){
+                        genreParent = "genre2";
+                    }else if (genreParent.equalsIgnoreCase("tech")){
+                        genreParent = "genre1";
+                    }
+
+                    if (subgenreParent.equalsIgnoreCase("motor")){
+                        subgenreParent = "sg1-2";
+                    }else if (subgenreParent.equalsIgnoreCase("mobil")){
+                        subgenreParent = "sg2-2";
+                    }
+
                     UploadTask uploadTask = fileRef.putFile(finalUri);
                     uploadTask.addOnFailureListener(new OnFailureListener() {
                         @Override

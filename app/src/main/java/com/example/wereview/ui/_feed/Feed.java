@@ -64,7 +64,7 @@ public class Feed extends AppCompatActivity{
             finish();
         }
 
-        database = FirebaseDatabase.getInstance().getReference();
+        database = FirebaseDatabase.getInstance().getReference().child("posts");
         // Setup the RecyclerView
         mrecyclerView = findViewById(R.id.rvFeed);
         mLayoutManager = new LinearLayoutManager(this);

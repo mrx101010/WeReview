@@ -70,6 +70,7 @@
 
 
         <Button
+            android:onClick="toHome"
             android:id="@+id/btMasuk"
             android:layout_width="@dimen/_85sdp"
             android:layout_height="@dimen/_34sdp"
