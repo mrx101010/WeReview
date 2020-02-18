@@ -177,6 +177,9 @@ public class ActivityAdd extends AppCompatActivity implements AdapterView.OnItem
                             Uri downloadUrl = taskSnapshot.getUploadSessionUri();
                             // save image to database
 
+                            Intent intent = new Intent(ActivityAdd.this, HomeFragment.class);
+                            startActivity(intent);
+
                             Toast.makeText(ActivityAdd.this, "Upload finished!", Toast.LENGTH_SHORT).show();
                         }
                     });

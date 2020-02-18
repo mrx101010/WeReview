@@ -9,12 +9,14 @@ public class regis {
     String password;
     String level;
     String poin;
+    String token;
+    String fbuid;
 
     public regis(){
 
     }
 
-    public regis(String id, String nama, String username, String email, String password, String level, String poin) {
+    public regis(String id, String nama, String username, String email, String password, String level, String poin, String token, String fbuid) {
         this.id = id;
         this.nama = nama;
         this.username = username;
@@ -22,6 +24,8 @@ public class regis {
         this.password = password;
         this.level = level;
         this.poin = poin;
+        this.token = token;
+        this.fbuid = fbuid;
     }
 
     public String getId() {
@@ -78,5 +82,21 @@ public class regis {
 
     public void setPoin(String poin) {
         this.poin = poin;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getFbuid() {
+        return fbuid;
+    }
+
+    public void setFbuid(String fbuid) {
+        this.fbuid = fbuid;
     }
 }

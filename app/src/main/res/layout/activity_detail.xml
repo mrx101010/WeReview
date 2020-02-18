@@ -2,31 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="43dp">
-    <RelativeLayout
-        android:id="@+id/relative_item"
+    android:layout_height="wrap_content">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDetailFeed"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
 
-        <ImageView
-            android:id="@+id/iv_subgenre_photo"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/trippie" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_below="@id/relative_item">
-
-        <TextView
-            android:id="@+id/akun"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="rrdarmawan11"
-            android:fontFamily="@font/geometria_bold" />    </RelativeLayout>
 </RelativeLayout>

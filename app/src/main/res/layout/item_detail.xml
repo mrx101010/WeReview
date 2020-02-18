@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="43dp">
+
+    <RelativeLayout
+        android:id="@+id/relative_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_detail_feed_photo"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/trippie" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative_item"
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/akun"
+            android:textSize="@dimen/_15sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/geometria_bold"
+            android:text="rrdarmawan11" />
+        <TextView
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/caption"
+            android:layout_below="@id/akun"
+            android:layout_width="wrap_content"
+            android:text="Description"
+            android:fontFamily="@font/geometria_bold"
+            android:textSize="@dimen/_30sdp"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/tv_description"
+            android:layout_below="@id/caption"
+            android:layout_width="wrap_content"
+            android:text="Isi Description"
+            android:fontFamily="@font/geometria_bold"
+            android:textSize="@dimen/_20sdp"
+            android:layout_height="wrap_content"></TextView>
+
+    </RelativeLayout>
+</RelativeLayout>

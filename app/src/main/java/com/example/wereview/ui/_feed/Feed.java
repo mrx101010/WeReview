@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.wereview.R;
+import com.example.wereview.ui._detail_feed.DetailActivity;
 import com.example.wereview.ui._fragment.adapter.RecyclerItemClickListener;
 import com.example.wereview.ui._feed.adapter.Post;
 import com.example.wereview.ui._feed.adapter.PostAdapter;
@@ -89,112 +90,38 @@ public class Feed extends AppCompatActivity{
             Toast.makeText(Feed.this, subgenre + "-" + genre, Toast.LENGTH_SHORT).show();
         }
 
-//        Query imagesQuery = database.child("post").orderByKey().limitToFirst(100);
-//        imagesQuery.orderByChild("subgenreParent").equalTo("sg" + subgenre + "-" + genre).addChildEventListener(new ChildEventListener() {
-//            @Override
-//            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//                final Post post =  dataSnapshot.getValue(Post.class);
-//
-//                //get the image user
-////                database.child("regis/" + post.userId).addValueEventListener(new ValueEventListener() {
-////                    @Override
-////                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-////                        regis user = dataSnapshot.getValue(regis.class);
-////                        post.user = user;
-////                        mAdapter.notifyDataSetChanged();
-////                    }
-////
-////                    @Override
-////                    public void onCancelled(@NonNull DatabaseError databaseError) {
-////
-////                    }
-////                });
-////
-////                //get the image likes
-////                Query likesQuery = database.child("likes").orderByChild("imageId").equalTo(post.key);
-////                likesQuery.addChildEventListener(new ChildEventListener() {
-////                    @Override
-////                    public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-////                        Like like = dataSnapshot.getValue(Like.class);
-////                        post.addLike();
-////                        if(like.userId.equals(fbUser.getUid())) {
-////                            post.hasLiked = true;
-////                            post.userLike = dataSnapshot.getKey();
-////                        }
-////                        mAdapter.notifyDataSetChanged();
-////                    }
-////
-////                    @Override
-////                    public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-////
-////                    }
-////
-////                    @Override
-////                    public void onChildRemoved(DataSnapshot dataSnapshot) {
-////                        Like like = dataSnapshot.getValue(Like.class);
-////                        post.removeLike();
-////                        if(like.userId.equals(fbUser.getUid())) {
-////                            post.hasLiked = false;
-////                            post.userLike = null;
-////                        }
-////                        mAdapter.notifyDataSetChanged();
-////                    }
-////
-////                    @Override
-////                    public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-////
-////                    }
-////
-////                    @Override
-////                    public void onCancelled(DatabaseError databaseError) {
-////
-////                    }
-////                });
-////
-////                mAdapter.addImage(post);
-//            }
-//
-//            @Override
-//            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//
-//            }
-//
-//            @Override
-//            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-
         database.orderByChild("subgenreParent").equalTo("sg" + subgenre + "-" + genre).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 postArrayList.clear();
 
+                Post post = new Post();
+                String id = null;
                 for (DataSnapshot artistSnapshot : dataSnapshot.getChildren()) {
-                    Post post = artistSnapshot.getValue(Post.class);
+                    post = artistSnapshot.getValue(Post.class);
+                    id = post.getKey();
                     postArrayList.add(post);
                 }
 
                 PostAdapter adapter = new PostAdapter(Feed.this, postArrayList);
                 mrecyclerView.setAdapter(adapter);
 
+                final String finalId = id;
                 mrecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(Feed.this, new RecyclerItemClickListener.OnItemClickListener() {
                     @Override
                     public void onItemClick(View view, int position) {
                         position += 1;
+
+
                         Toast.makeText(Feed.this, "Card at " + position + " is clicked", Toast.LENGTH_SHORT).show();
 
+
+
+                        Intent intent = new Intent(Feed.this, DetailActivity.class);
+                        intent.putExtra("PostID", finalId);
+                        startActivity(intent);
+                        finish();
 
                     }
 
