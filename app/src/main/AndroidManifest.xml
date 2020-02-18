@@ -30,7 +30,14 @@
 
         <activity android:name=".ui._fragment.ActivityAdd"
             android:theme="@style/AppTheme.Fullscreen"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
 
         <activity android:name=".ui._feed.Feed"
             android:theme="@style/AppTheme.Fullscreen"

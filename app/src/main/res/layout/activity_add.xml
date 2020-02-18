@@ -10,7 +10,8 @@
         android:id="@+id/toolbar_post"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_45sdp"
-        android:background="@color/bg_orange">
+        android:background="@color/bg_orange"
+        android:layout_alignParentTop="true">
 
         <TextView
             android:layout_width="wrap_content"
@@ -28,6 +29,8 @@
         android:layout_below="@+id/toolbar_post"
         android:layout_marginLeft="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_20sdp"
+        android:entries="@array/jenisGenre"
+
         android:layout_marginRight="@dimen/_30sdp"
         android:padding="@dimen/_15sdp"
         android:scrollbars="vertical" />
@@ -105,10 +108,10 @@
         android:layout_below="@id/tvDeskripsi"
         android:layout_marginLeft="@dimen/_15sdp"
         android:layout_marginTop="@dimen/_10sdp"
+        android:gravity="top"
         android:layout_marginRight="@dimen/_30sdp"
         android:background="@drawable/kotak"
-        android:inputType="text"
-        android:textAlignment="textStart" />
+        android:inputType="text|textMultiLine" />
 
     <Button
         android:id="@+id/btUpload"
