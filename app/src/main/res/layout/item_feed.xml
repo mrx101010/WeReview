@@ -35,6 +35,14 @@
                 android:textSize="60dp"
                 android:layout_centerInParent="true" />
 
+            <Button
+                android:id="@+id/btOpsi"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/tv_feed_name"
+                android:background="@drawable/ic_laporkan" />
+
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

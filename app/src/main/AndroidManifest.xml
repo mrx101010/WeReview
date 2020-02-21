@@ -31,6 +31,11 @@
         <activity android:name=".ui._fragment.ActivityAdd"
             android:theme="@style/AppTheme.Fullscreen"
             android:screenOrientation="portrait">
+        </activity>
+
+        <activity android:name=".ui._feed.Feed"
+            android:theme="@style/AppTheme.Fullscreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,10 +43,6 @@
             </intent-filter>
 
         </activity>
-
-        <activity android:name=".ui._feed.Feed"
-            android:theme="@style/AppTheme.Fullscreen"
-            android:screenOrientation="portrait"/>
 
         <activity android:name=".ui._chatroom.ActivityChatroom"
             android:theme="@style/AppTheme.Fullscreen"
